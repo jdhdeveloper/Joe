@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.joe.activity.MainActivity"></activity>
     </application>
 
 </manifest>
