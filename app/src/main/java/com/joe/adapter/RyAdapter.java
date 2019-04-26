@@ -1,13 +1,16 @@
 package com.joe.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.joe.bean.Technology;
+import com.joe.activity.ShowActivity;
 import com.joe.joe.R;
 
 import java.util.List;
@@ -15,6 +18,7 @@ import java.util.List;
 public class RyAdapter extends RecyclerView.Adapter<RyAdapter.ViewHolder> {
 
     private List<String> mTechnologyList;
+    private Context mContext;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView technologyName;
@@ -25,15 +29,25 @@ public class RyAdapter extends RecyclerView.Adapter<RyAdapter.ViewHolder> {
         }
     }
 
-    public RyAdapter(List<String> technologyList){
-        mTechnologyList = technologyList;
+    public RyAdapter(List<String> technologyList,Context context){
+        this.mTechnologyList = technologyList;
+        this.mContext = context;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_ry_main,parent,false);
-        ViewHolder holder = new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.technologyName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = holder.getAdapterPosition();
+                //TODO:item监听事件
+                Toast.makeText(v.getContext(),"click"+mTechnologyList.get(position),Toast.LENGTH_LONG).show();
+                mContext.startActivity(new Intent(mContext,ShowActivity.class));
+            }
+        });
         return holder;
     }
 
