@@ -2,6 +2,7 @@ package com.joe.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
@@ -24,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView mRv = findViewById(R.id.rv_main);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRv.setLayoutManager(layoutManager);
-        RyAdapter adapter = new RyAdapter(mTechnologyList);
+        RyAdapter adapter = new RyAdapter(mTechnologyList,this);
         mRv.setAdapter(adapter);
+        mRv.addItemDecoration(new DividerItemDecoration(this,LinearLayout.VERTICAL));
     }
 
     //初始化技术列表数据，后期修改为用户可自由增加
@@ -34,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         mTechnologyList.add("TextView");
         mTechnologyList.add("Button");
         mTechnologyList.add("EditText");
+        mTechnologyList.add("RecyclerView");
+        mTechnologyList.add("fragment");
+        mTechnologyList.add("TextView");
+        mTechnologyList.add("TextView");
+        mTechnologyList.add("TextView");
         mTechnologyList.add("TextView");
         mTechnologyList.add("TextView");
         mTechnologyList.add("TextView");
