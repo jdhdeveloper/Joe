@@ -43,8 +43,7 @@ public class RyAdapter extends RecyclerView.Adapter<RyAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                //TODO:item监听事件
-                Toast.makeText(v.getContext(),"click"+mTechnologyList.get(position),Toast.LENGTH_LONG).show();
+                //跳转到ShowActivity
                 mContext.startActivity(new Intent(mContext,ShowActivity.class));
             }
         });

@@ -9,10 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.joe.base.BaseFragment;
 import com.joe.joe.R;
 
 public class ShowFrgFragment extends Fragment {
+    private int category;//展示的内容种类
     private TextView txtShow;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,4 +34,7 @@ public class ShowFrgFragment extends Fragment {
                 "        transaction.commit();");
         return view;
     }
+
+
+
 }

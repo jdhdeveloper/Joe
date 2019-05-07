@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         mRv.setLayoutManager(layoutManager);
         RyAdapter adapter = new RyAdapter(mTechnologyList,this);
         mRv.setAdapter(adapter);
+        //添加Recyclerview条目之间的分隔线
         mRv.addItemDecoration(new DividerItemDecoration(this,LinearLayout.VERTICAL));
     }
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         mTechnologyList.add("EditText");
         mTechnologyList.add("RecyclerView");
         mTechnologyList.add("fragment");
-        mTechnologyList.add("TextView");
+        mTechnologyList.add("Activity");
         mTechnologyList.add("TextView");
         mTechnologyList.add("TextView");
         mTechnologyList.add("TextView");
